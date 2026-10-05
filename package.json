@@ -1,0 +1,66 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "lmstudio",
+  "title": "LM Studio",
+  "description": "Run a one-shot prompt against a local LM Studio model via the Anthropic-compatible Messages API",
+  "icon": "icon.png",
+  "author": "dawson",
+  "platforms": ["macOS"],
+  "categories": ["Productivity"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "prompt",
+      "title": "LM Studio Prompt",
+      "description": "Send a prompt to a local LM Studio model and stream the answer",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "prompt",
+          "type": "text",
+          "placeholder": "Prompt",
+          "required": true
+        },
+        {
+          "name": "model",
+          "type": "text",
+          "placeholder": "Model",
+          "required": true
+        },
+        {
+          "name": "reasoning",
+          "type": "dropdown",
+          "placeholder": "Reasoning",
+          "required": false,
+          "data": [
+            { "title": "Off", "value": "off" },
+            { "title": "On", "value": "on" }
+          ]
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "baseUrl",
+      "type": "textfield",
+      "title": "Server URL",
+      "description": "LM Studio server address",
+      "default": "http://localhost:1234",
+      "required": false
+    }
+  ],
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "@raycast/api": "~1.104.25"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "typescript": "^5.9.0"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop"
+  }
+}

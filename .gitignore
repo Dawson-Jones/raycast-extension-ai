@@ -1,0 +1,8 @@
+# dependencies
+/node_modules
+
+# Raycast auto-generated from package.json manifest
+raycast-env.d.ts
+
+# misc
+.DS_Store
